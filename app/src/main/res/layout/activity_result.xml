@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.gita.spk_saw.ResultActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="0"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:text="Result"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/result_label"
+                />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    >
+                    <ImageView
+                        android:src="@drawable/iron_man"
+                        android:scaleType="centerCrop"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:padding="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:text="Iron Man"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bravery:"
+                                />
+
+                            <TextView
+                                android:id="@+id/brave_1"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Performance:"
+                                android:textStyle="bold"
+                                />
+
+                            <TextView
+                                android:id="@+id/performance_1"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Temperament:"
+                                android:textStyle="bold"
+                                />
+
+                            <TextView
+                                android:id="@+id/temperament_1"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Score:"
+                                android:textStyle="bold"
+                                />
+
+                            <TextView
+                                android:id="@+id/score_1"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <ImageView
+                        android:src="@drawable/captain_america_two"
+                        android:scaleType="centerCrop"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:padding="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:text="Captain America"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bravery:"
+                                />
+
+                            <TextView
+                                android:id="@+id/brave_2"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Performance:"
+                                android:textStyle="bold"
+                                />
+
+                            <TextView
+                                android:id="@+id/performance_2"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Temperament:"
+                                android:textStyle="bold"
+                                />
+
+                            <TextView
+                                android:id="@+id/temperament_2"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Score:"
+                                android:textStyle="bold"
+                                />
+
+                            <TextView
+                                android:id="@+id/score_2"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:layout_marginTop="10dp"
+                    >
+
+                    <ImageView
+                        android:src="@drawable/hulk"
+                        android:scaleType="centerCrop"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:padding="5dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:textStyle="bold"
+                            android:textAlignment="center"
+                            android:text="Hulk"
+                            />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bravery:"
+                                />
+
+                            <TextView
+                                android:id="@+id/brave_3"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Performance:"
+                                android:textStyle="bold"
+                                />
+
+                            <TextView
+                                android:id="@+id/performance_3"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Temperament:"
+                                android:textStyle="bold"
+                                />
+
+                            <TextView
+                                android:id="@+id/temperament_3"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Score:"
+                                android:textStyle="bold"
+                                />
+
+                            <TextView
+                                android:id="@+id/score_3"
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Score 1"
+                                />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0">
+
+            <Button
+                android:id="@+id/back_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#5C6BC0"
+                android:textColor="#fff"
+                android:text="Finish"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

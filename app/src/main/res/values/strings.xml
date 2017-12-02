@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MyLeader</string>
+    <string name="welcome">Welcome</string>
+    <string name="description">This will support you to choose the leader use SAW Method.</string>
+    <string name="bravery_label">Bravery (1 - 10)</string>
+    <string name="performance_label">Performance (1 - 10)</string>
+    <string name="temperament_label">Temperament</string>
+    <string name="temperament_1_label">Always Angry</string>
+    <string name="temperament_2_label">Netral</string>
+    <string name="temperament_3_label">Calm</string>
+    <string name="result_label">Based on the SAW method calculation, the winner is the the candidate has the highest score and here are final score of each candidate:</string>
+</resources>
