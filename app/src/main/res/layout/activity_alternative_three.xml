@@ -5,16 +5,10 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context="com.gita.spk_saw.AlternativeThreeActivity">
 
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:src="@drawable/hulk"
-    android:scaleType="centerCrop"
-    />
-
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#abababab"
     android:orientation="vertical">
 
     <LinearLayout
@@ -29,7 +23,6 @@ tools:context="com.gita.spk_saw.AlternativeThreeActivity">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="24sp"
-            android:textColor="#fff"
             android:textStyle="bold"
             android:layout_marginBottom="20dp"
             android:text="score the candidate (3/3)" />
@@ -38,10 +31,9 @@ tools:context="com.gita.spk_saw.AlternativeThreeActivity">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:textColor="#fff"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="3. Hulk" />
+            android:text="3. Pande" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,7 +47,6 @@ tools:context="com.gita.spk_saw.AlternativeThreeActivity">
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginRight="20dp"
-                android:textColor="#fff"
                 android:text="@string/bravery_label" />
 
             <EditText
@@ -81,7 +72,6 @@ tools:context="com.gita.spk_saw.AlternativeThreeActivity">
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginRight="20dp"
-                android:textColor="#fff"
                 android:text="@string/performance_label" />
 
             <EditText
@@ -106,7 +96,6 @@ tools:context="com.gita.spk_saw.AlternativeThreeActivity">
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginRight="20dp"
-                android:textColor="#fff"
                 android:text="@string/temperament_label" />
 
             <RadioGroup
@@ -119,21 +108,18 @@ tools:context="com.gita.spk_saw.AlternativeThreeActivity">
                     android:id="@+id/temperament_angry_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/temperament_1_label"
                     android:textColor="#fff" />
 
                 <RadioButton
                     android:id="@+id/temperament_normal_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#fff"
                     android:text="@string/temperament_2_label"/>
 
                 <RadioButton
                     android:id="@+id/temperament_calm_3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#fff"
                     android:text="@string/temperament_3_label"/>
 
             </RadioGroup>

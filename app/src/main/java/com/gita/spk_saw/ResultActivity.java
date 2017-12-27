@@ -1,7 +1,10 @@
 package com.gita.spk_saw;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.lang.reflect.Array;
@@ -14,6 +17,7 @@ public class ResultActivity extends AppCompatActivity {
     TextView txt_brave_1, txt_performance_1, txt_temperament_1;
     TextView txt_brave_2, txt_performance_2, txt_temperament_2;
     TextView txt_brave_3, txt_performance_3, txt_temperament_3;
+    Button back_home_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,6 +120,15 @@ public class ResultActivity extends AppCompatActivity {
         txt_score_1.setText(v1.toString());
         txt_score_2.setText(v2.toString());
         txt_score_3.setText(v3.toString());
+
+        back_home_btn = (Button)findViewById(R.id.back_home);
+        back_home_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent go_home = new Intent(ResultActivity.this, HomeActivity.class);
+                startActivity(go_home);
+            }
+        });
 
     }
 
