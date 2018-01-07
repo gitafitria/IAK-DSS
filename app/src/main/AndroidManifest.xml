@@ -12,20 +12,16 @@
         <activity android:name=".HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".SelectAlternativeActivity">
-        </activity>
-
-        <activity android:name=".AlternativeTwoActivity">
-        </activity>
-
-        <activity android:name=".AlternativeThreeActivity">
-        </activity>
-
+        <activity android:name=".SelectAlternativeActivity" />
+        <activity android:name=".AlternativeTwoActivity" />
+        <activity android:name=".AlternativeThreeActivity" />
         <activity android:name=".ResultActivity" />
+        <activity android:name=".DataAdapter" />
+        <activity android:name=".AlternativeActivity"></activity>
     </application>
 
 </manifest>
