@@ -9,4 +9,5 @@
     <string name="temperament_2_label">Netral</string>
     <string name="temperament_3_label">Calm</string>
     <string name="result_label">Based on the SAW method calculation, the winner is the the candidate has the highest score and here are final score of each candidate:</string>
+    <string name="title_activity_tab">TabActivity</string>
 </resources>
