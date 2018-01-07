@@ -20,6 +20,8 @@
         <activity android:name=".AlternativeTwoActivity" />
         <activity android:name=".AlternativeThreeActivity" />
         <activity android:name=".ResultActivity" />
+        <activity android:name=".DataAdapter" />
+        <activity android:name=".AlternativeActivity"></activity>
     </application>
 
 </manifest>

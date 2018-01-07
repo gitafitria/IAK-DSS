@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SPK_SAW.iml" filepath="$PROJECT_DIR$/SPK_SAW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IAK-DSS.iml" filepath="$PROJECT_DIR$/IAK-DSS.iml" />
+      <module fileurl="file://C:\Users\premawaisnawa\Documents\GitHub\IAK-DSS\IAK-DSS\SPK_SAW.iml" filepath="C:\Users\premawaisnawa\Documents\GitHub\IAK-DSS\IAK-DSS\SPK_SAW.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
