@@ -21,7 +21,8 @@
         <activity android:name=".AlternativeThreeActivity" />
         <activity android:name=".ResultActivity" />
         <activity android:name=".DataAdapter" />
-        <activity android:name=".AlternativeActivity"></activity>
+        <activity android:name=".AlternativeActivity" />
+        <activity android:name=".AddAlternative"></activity>
     </application>
 
 </manifest>

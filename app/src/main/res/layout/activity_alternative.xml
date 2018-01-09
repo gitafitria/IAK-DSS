@@ -7,6 +7,12 @@
     tools:context="com.gita.spk_saw.AlternativeActivity"
     android:orientation="vertical">
 
+    <Button
+        android:id="@+id/btnAddAlternatif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Alternative" />
+
     <ListView
         android:id="@+id/lvData"
         android:layout_width="match_parent"
