@@ -3,63 +3,211 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
+    android:padding="10dp"
     android:layout_height="match_parent"
     tools:context="com.gita.spk_saw.WithViewpagerActivity$PlaceholderFragment">
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
-            android:layout_width="match_parent"
             android:orientation="vertical"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
-                android:id="@+id/section_label"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:text="satu"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:text="satu" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginBottom="15dp"
+                android:textColor="#000"
+                android:textStyle="italic"
+                android:textAlignment="center"
+                android:text="Biodata"/>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_weight="0"
+                    android:layout_width="150dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"/>
+
+                <TextView
+                    android:id="@+id/bio_nama"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nama"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Tempat lahir"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:inputType="textPersonName"/>
+
+                <TextView
+                    android:id="@+id/bio_tempat_lahir"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:text="tempat lahir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal lahir"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:inputType="textPersonName"/>
+
+                <TextView
+                    android:id="@+id/bio_tgl_lahir"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:text="tgl lahir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:text="Jurusan" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/bio_jurusan"
+                    android:text="MTI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:text="satu"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:text="satu"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:text="satu"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:text="satu"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:text="satu"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:text="satu"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:text="satu"
-                />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:layout_marginBottom="15dp"
+                android:textStyle="italic"
+                android:textColor="#000"
+                android:text="Bobot"/>
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:text="Waktu Organisasi (tahun)"
+                    android:textStyle="bold"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/bobot_organisasi"
+                    android:layout_weight="1"
+                    android:text="tahun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:text="Tingkat kuliah"
+                    android:layout_width="150dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/bobot_semester"
+                    android:text="5 (ganjil)"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:text="Kegiatan"
+                    android:layout_width="150dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:text="Buanyak"
+                    android:id="@+id/bobot_kegiatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:text="Jarak rumah (km)"
+                    android:layout_width="150dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/jarak_rumah"
+                    android:layout_weight="1"
+                    android:text="10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+
 
 </RelativeLayout>

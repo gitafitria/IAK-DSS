@@ -4,62 +4,195 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     tools:context="com.gita.spk_saw.AddAlternative"
     android:orientation="vertical">
-
-    <EditText
-        android:id="@+id/etNama"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="Nama"
-        android:inputType="textPersonName"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="#000"
+        android:layout_weight="0"
+        android:layout_marginBottom="20dp"
+        android:textAlignment="center"
+        android:text="Add New Alternative"/>
 
-    <EditText
-        android:id="@+id/etTempat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:hint="Tempat lahir"
-        android:inputType="textPersonName"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="79dp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginBottom="15dp"
+                android:textColor="#000"
+                android:textStyle="italic"
+                android:text="Biodata"/>
 
-    <EditText
-        android:id="@+id/etTanggal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:ems="10"
-        android:inputType="date"
-        app:layout_constraintLeft_toLeftOf="parent"
-        tools:layout_editor_absoluteY="151dp"
-        tools:ignore="MissingConstraints" />
+            <EditText
+                android:id="@+id/etNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:hint="Nama"
+                android:inputType="textPersonName" />
 
-    <Spinner
-        android:id="@+id/spJurusan"
-        android:layout_width="214dp"
-        android:layout_height="31dp"
-        app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="216dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/etTempat"
+                    android:layout_weight="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Tempat lahir"
+                    android:textSize="14sp"
+                    android:layout_marginRight="10dp"
+                    android:inputType="textPersonName"/>
+
+                <EditText
+                    android:id="@+id/etTanggal"
+                    android:layout_weight="1"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Tanggal Lahir (YYYY-MM-DD)"
+                    android:inputType="date" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Jurusan" />
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/spJurusan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_marginBottom="15dp"
+                android:textStyle="italic"
+                android:textColor="#000"
+                android:text="Bobot"/>
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:text="Waktu Organisasi"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:layout_weight="1"
+                    android:inputType="numberDecimal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_weight="0"
+                    android:text="tahun"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:text="Tingkat kuliah"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/spSemester"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:text="Kegiatan"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/spKegiatan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="0"
+                    android:text="Jarak rumah"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/jarak_rumah"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:inputType="numberDecimal"/>
+
+                <TextView
+                    android:layout_weight="0"
+                    android:text="km"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
     <Button
         android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
+        android:layout_weight="0"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:text="Simpan"
-        app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteY="267dp"
-        tools:ignore="MissingConstraints" />
+        android:text="Simpan" />
 
 </LinearLayout>
