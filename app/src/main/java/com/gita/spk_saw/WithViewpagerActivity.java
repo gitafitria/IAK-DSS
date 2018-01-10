@@ -1,5 +1,8 @@
 package com.gita.spk_saw;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -13,12 +16,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class WithViewpagerActivity extends AppCompatActivity {
-
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -33,6 +37,7 @@ public class WithViewpagerActivity extends AppCompatActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     TabLayout tl;
+    Button btnConfirm;
 
     private ViewPager mViewPager;
 
@@ -45,6 +50,8 @@ public class WithViewpagerActivity extends AppCompatActivity {
         final ArrayList<String> selected_names = getIntent().getStringArrayListExtra("selected_names");
 
         tl = (TabLayout)findViewById(R.id.tabs);
+
+        koneksiDB = new DBController(this);
 
         for(int i=0; i<selected_names.size(); i++) {
             tl.addTab(tl.newTab().setText(selected_names.get(i)));
@@ -63,16 +70,31 @@ public class WithViewpagerActivity extends AppCompatActivity {
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tl));
         tl.addOnTabSelectedListener(new TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 
+        btnConfirm = (Button)findViewById(R.id.btnConfirm);
+        btnConfirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goResultActivity = new Intent(WithViewpagerActivity.this, ResultActivity.class);
+                goResultActivity.putExtra("selected_ids", selected_ids);
+                startActivity(goResultActivity);
+            }
+        });
+
     }
 
     /**
      * A placeholder fragment containing a simple view.
      */
+
+    static DBController koneksiDB;
+    protected static Cursor cursor;
+
     public static class PlaceholderFragment extends Fragment {
         /**
          * The fragment argument representing the section number for this
          * fragment.
          */
+
         private static final String ARG_SECTION_NUMBER = "section_number";
 
         public PlaceholderFragment() {
@@ -93,23 +115,53 @@ public class WithViewpagerActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_with_viewpager, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            String next_label = null;
 
-            switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
-                case 1:
-                    next_label = "Gita";
-                    break;
-                case 2:
-                    next_label = "Fitria";
-                    break;
-                case 3:
-                    next_label = "Ratnasari";
-                    break;
+            TextView bio_nama = (TextView) rootView.findViewById(R.id.bio_nama);
+            TextView bio_tempat_lahir = (TextView) rootView.findViewById(R.id.bio_tempat_lahir);
+            TextView bio_tgl_lahir = (TextView) rootView.findViewById(R.id.bio_tgl_lahir);
+            TextView bio_jurusan = (TextView) rootView.findViewById(R.id.bio_jurusan);
+            TextView bobot_organisasi = (TextView) rootView.findViewById(R.id.bobot_organisasi);
+            TextView bobot_semester = (TextView) rootView.findViewById(R.id.bobot_semester);
+            TextView bobot_kegiatan = (TextView) rootView.findViewById(R.id.bobot_kegiatan);
+            TextView jarak_rumah = (TextView) rootView.findViewById(R.id.jarak_rumah);
 
+
+            String querySel;
+            querySel = "SELECT * FROM alternative where id = " + getArguments().getInt(ARG_SECTION_NUMBER);
+            SQLiteDatabase db = koneksiDB.getReadableDatabase();
+            cursor = db.rawQuery(querySel, null);
+
+            final ArrayList<HashMap<String, String>> daftarMHS;
+            daftarMHS = new ArrayList<HashMap<String, String>>();
+
+//            switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
+//                case 1:
+//                    next_label = "Gita";
+//                    break;
+//                case 2:
+//                    next_label = "Fitria";
+//                    break;
+//                case 3:
+//                    next_label = "Ratnasari";
+//                    break;
+//
+//            }
+
+//            textView.setText(next_label);
+            String key_bio_nama, key_bio_tempat_lahir, key_bio_tgl_lahir, key_bio_jurusan;
+            if (cursor.moveToFirst() ){
+                do {
+                    bio_nama.setText(cursor.getString(1));
+                    bio_tempat_lahir.setText(cursor.getString(2));
+                    bio_tgl_lahir.setText(cursor.getString(3));
+                    bio_jurusan.setText(cursor.getString(4));
+                } while (cursor.moveToNext());
             }
 
-            textView.setText(next_label);
+//            bobot_organisasi.setText(bobot_organisasi);
+//            bobot_semester.setText(bobot_semester);
+//            bobot_kegiatan.setText(bobot_kegiatan);
+//            jarak_rumah.setText(jarak_rumah);
             return rootView;
         }
     }

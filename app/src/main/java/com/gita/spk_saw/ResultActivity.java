@@ -1,6 +1,8 @@
 package com.gita.spk_saw;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,27 +15,39 @@ import java.util.Collection;
 import java.util.Collections;
 
 public class ResultActivity extends AppCompatActivity {
-    TextView txt_score_1, txt_score_2, txt_score_3;
-    TextView txt_brave_1, txt_performance_1, txt_temperament_1;
-    TextView txt_brave_2, txt_performance_2, txt_temperament_2;
-    TextView txt_brave_3, txt_performance_3, txt_temperament_3;
+    TextView txt_score_1, txt_score_2;
     Button back_home_btn;
 
-    @Override
+    static DBController koneksiDB;
+    protected static Cursor cursor;
+
     protected void onCreate(Bundle savedInstanceState) {
+        koneksiDB = new DBController(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        ArrayList<String> score_1, score_2, score_3;
-        score_1 = getIntent().getStringArrayListExtra("selected_strings");
+        ArrayList<String> selected_ids, score_2, score_3;
+        selected_ids = getIntent().getStringArrayListExtra("selected_ids");
 
-        txt_score_1 = (TextView)findViewById(R.id.score_1);
+        for (int idx = 1 ; idx <= selected_ids.size(); idx++) {
+            String querySel;
+            querySel = "SELECT * FROM kriteria where id = " + selected_ids.get(idx);
+            SQLiteDatabase db = koneksiDB.getReadableDatabase();
+            cursor = db.rawQuery(querySel, null);
+        }
+
+        if (cursor.moveToFirst() ){
+            do {
+//                bio_nama.setText(cursor.getString(1));
+//                bio_tempat_lahir.setText(cursor.getString(2));
+//                bio_tgl_lahir.setText(cursor.getString(3));
+//                bio_jurusan.setText(cursor.getString(4));
+            } while (cursor.moveToNext());
+        }
+//        txt_score_1 = (TextView)findViewById(R.id.score_1);
 //        for (score_1) {
 //
 //        }
-
-        txt_score_1.setText(score_1.get(0));
-        txt_score_2.setText(score_1.get(1));
 
 //
 //        // matrix keputusan

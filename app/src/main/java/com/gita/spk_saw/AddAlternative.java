@@ -55,7 +55,7 @@ public class AddAlternative extends AppCompatActivity {
         etTempat = (EditText)findViewById(R.id.etTempat);
         spJurusan = (Spinner)findViewById(R.id.spJurusan);
 
-        koneksiDB = new DBController(this);
+        koneksiDB = new DBController(AddAlternative.this);
 
 //        kode untuk menampilkan combobox menggunakan spinner
         ArrayList<String> classJurusan = new ArrayList<String>();

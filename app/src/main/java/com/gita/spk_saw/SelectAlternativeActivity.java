@@ -49,7 +49,6 @@ public class SelectAlternativeActivity extends AppCompatActivity {
                 if (selected_ids.size() < 2) {
                     Toast.makeText(getApplicationContext(), "Pilih lebih dari 1 alternative", Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), selected_names.get(0).toString(), Toast.LENGTH_LONG).show();
                   Intent goResult = new Intent(SelectAlternativeActivity.this, WithViewpagerActivity.class);
 
                   goResult.putExtra("selected_ids", selected_ids);
@@ -92,7 +91,6 @@ public class SelectAlternativeActivity extends AppCompatActivity {
                 TextView select_nama = (TextView) view.findViewById(R.id.select_alternative_name);
 
                 if (select_cb.isChecked()) {
-                    Toast.makeText(getApplicationContext(),"Uncentang" + select_cb.getText().toString(), Toast.LENGTH_SHORT).show();
                     select_cb.setChecked(false);
                     selected_ids.remove(select_cb.getText().toString());
                     selected_names.remove(select_nama.getText().toString());
@@ -100,7 +98,7 @@ public class SelectAlternativeActivity extends AppCompatActivity {
                     selected_ids.add(select_cb.getText().toString());
                     selected_names.add(select_nama.getText().toString());
                     select_cb.setChecked(true);
-                    Toast.makeText(getApplicationContext(),"centang" + select_cb.getText().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"" + select_nama.getText().toString() + " terpilih", Toast.LENGTH_SHORT).show();
                 }
             }
 
