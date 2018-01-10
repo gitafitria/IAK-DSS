@@ -49,11 +49,14 @@ public class EditAlternativeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_alternative);
 
-        etNama = (EditText)findViewById(R.id.etEditNama);
-        etTempat = (EditText)findViewById(R.id.etEditTempat);
-        etTanggal = (EditText)findViewById(R.id.etEditTanggal);
-        spJurusan = (Spinner)findViewById(R.id.spEditJurusan);
-        btnUpdate = (Button)findViewById(R.id.btnUpdateAlternative);
+        // biodata
+        etNama = (EditText)findViewById(R.id.edit_bio_nama);
+        etTempat = (EditText)findViewById(R.id.edit_bio_tempate_lahir);
+        etTanggal = (EditText)findViewById(R.id.edit_bio_tgl_lahir);
+        spJurusan = (Spinner)findViewById(R.id.edit_bio_jurusan);
+        btnUpdate = (Button)findViewById(R.id.btnEdit);
+
+        // kriteria
 
 //		mengambil id alternative
         idAlter = getIntent().getStringExtra("NO");

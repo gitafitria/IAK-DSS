@@ -37,7 +37,7 @@
                 android:text="Biodata"/>
 
             <EditText
-                android:id="@+id/etNama"
+                android:id="@+id/edit_bio_nama"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
@@ -50,7 +50,7 @@
                 android:layout_marginBottom="20dp"
                 android:layout_height="wrap_content">
                 <EditText
-                    android:id="@+id/etTempat"
+                    android:id="@+id/edit_bio_tempate_lahir"
                     android:layout_weight="0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
                     android:inputType="textPersonName"/>
 
                 <EditText
-                    android:id="@+id/etTanggal"
+                    android:id="@+id/edit_bio_tgl_lahir"
                     android:layout_weight="1"
                     android:textSize="14sp"
                     android:layout_width="wrap_content"
@@ -82,7 +82,7 @@
                     android:text="Jurusan" />
                 <Spinner
                     android:layout_weight="1"
-                    android:id="@+id/spJurusan"
+                    android:id="@+id/edit_bio_jurusan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -110,6 +110,7 @@
                     android:layout_height="wrap_content" />
                 <EditText
                     android:layout_weight="1"
+                    android:id="@+id/edit_bobot_organisasi"
                     android:inputType="numberDecimal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
@@ -134,7 +135,7 @@
 
                 <Spinner
                     android:layout_weight="1"
-                    android:id="@+id/spSemester"
+                    android:id="@+id/edit_bobot_semester"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -153,7 +154,7 @@
 
                 <Spinner
                     android:layout_weight="1"
-                    android:id="@+id/spKegiatan"
+                    android:id="@+id/edit_bobot_kegiatan"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     />
@@ -171,7 +172,7 @@
                     android:layout_height="wrap_content" />
 
                 <EditText
-                    android:id="@+id/jarak_rumah"
+                    android:id="@+id/edit_bobot_jarak"
                     android:layout_weight="1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
