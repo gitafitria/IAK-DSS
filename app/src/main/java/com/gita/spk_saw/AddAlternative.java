@@ -108,6 +108,7 @@ public class AddAlternative extends AppCompatActivity {
                 SQLiteDatabase db = koneksiDB.getWritableDatabase();
                 db.execSQL(query);
 
+
                 Toast.makeText(AddAlternative.this, "Alternatif Berhasil Ditambah", Toast.LENGTH_LONG).show();
 
                 Intent toAlternative = new Intent(AddAlternative.this, AlternativeActivity.class);
