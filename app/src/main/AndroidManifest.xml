@@ -16,13 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SelectAlternativeActivity" />
+        <activity android:name=".SelectAlternativeActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".AlternativeTwoActivity" />
         <activity android:name=".AlternativeThreeActivity" />
         <activity android:name=".ResultActivity" />
-        <activity android:name=".DataAdapter" />
         <activity android:name=".AlternativeActivity" />
         <activity android:name=".AddAlternative" />
+        <activity
+            android:name=".WithViewpagerActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".EditAlternativeActivity"></activity>
     </application>
 

@@ -1,88 +1,113 @@
 package com.gita.spk_saw;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.SparseBooleanArray;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class SelectAlternativeActivity extends AppCompatActivity {
-    Button go;
-    EditText performance, bravery;
-    RadioGroup temperament;
-    RadioButton selected_temperament, last_radio;
+    DBController koneksiDB;
+
+    ListView lvData;
+    Button btnNextResult;
+
+    protected Cursor cursor;
+    ArrayList<String> selected_ids = new ArrayList<String>();
+    ArrayList<String> selected_names = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_alternative);
 
-        bravery = (EditText)findViewById(R.id.score_bravery_1);
-        performance = (EditText)findViewById(R.id.score_performance_1);
-        temperament = (RadioGroup)findViewById(R.id.score_temperament_1);
+        lvData = (ListView) findViewById(R.id.lvSelectAlternative);
+        btnNextResult = (Button)findViewById(R.id.btnNextCalculate);
 
-        go = (Button)findViewById(R.id.next_to_1);
+        koneksiDB = new DBController(this);
 
-        go.setOnClickListener(new View.OnClickListener() {
+        TampilData();
+
+        btnNextResult.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                bravery.setError(null);
-                performance.setError(null);
-                last_radio = (RadioButton)findViewById(R.id.temperament_calm_1);
-                last_radio.setError(null);
-
-                String score_brave, score_perform;
-                boolean valid = true;
-
-                score_brave = bravery.getText().toString();
-                score_perform = performance.getText().toString();
-                int selected_temper = temperament.getCheckedRadioButtonId();
-
-                if (score_brave.length() < 1) {
-                    valid = false;
-                    bravery.setError("can't be blank");
-                } else if (Integer.parseInt(score_brave) > 10 || Integer.parseInt(score_brave) < 0 ) {
-                    valid = false;
-                    bravery.setError("score 1-10 only");
-                }
-
-                if (score_perform.length() < 1) {
-                    valid = false;
-                    performance.setError("can't be blank");
-                } else if (Integer.parseInt(score_perform) > 10 || Integer.parseInt(score_perform) < 0 ) {
-                    valid = false;
-                    bravery.setError("score 1-10 only");
-                }
-
-                if (selected_temper == -1) {
-                    valid = false;
-                    last_radio.setError("can't be blank");
-                }
-
-                if (valid == false) {
-                    Toast.makeText(getApplicationContext(), "Data is invalid", Toast.LENGTH_LONG).show();
+                if (selected_ids.size() < 2) {
+                    Toast.makeText(getApplicationContext(), "Pilih lebih dari 1 alternative", Toast.LENGTH_LONG).show();
                 } else {
-                    selected_temperament = (RadioButton)findViewById(selected_temper);
-                    String score_temper = selected_temperament.getText().toString();
+                    Toast.makeText(getApplicationContext(), selected_names.get(0).toString(), Toast.LENGTH_LONG).show();
+                  Intent goResult = new Intent(SelectAlternativeActivity.this, WithViewpagerActivity.class);
 
-                    Intent next_candidate = new Intent(SelectAlternativeActivity.this, AlternativeTwoActivity.class);
+                  goResult.putExtra("selected_ids", selected_ids);
+                  goResult.putExtra("selected_names", selected_names);
 
-                     ArrayList<String> score = new ArrayList<String>();
-                     score.add(score_brave);
-                     score.add(score_perform);
-                     score.add(score_temper);
-
-                     next_candidate.putExtra("score_1", score);
-
-                    startActivity(next_candidate);
+                    startActivity(goResult);
                 }
             }
         });
     }
+
+    void TampilData() {
+        String querySel;
+        querySel = "SELECT * FROM alternative";
+        SQLiteDatabase db = koneksiDB.getReadableDatabase();
+        cursor = db.rawQuery(querySel, null);
+
+        final ArrayList<HashMap<String, String>> daftarMHS;
+        daftarMHS = new ArrayList<HashMap<String, String>>();
+
+        Integer i = 1;
+
+        if (cursor.moveToFirst() ){
+            do {
+                HashMap<String, String> map = new HashMap<String, String>();
+                map.put("key_no", cursor.getString(0));
+                map.put("key_nama", cursor.getString(1));
+                daftarMHS.add(map);
+            } while (cursor.moveToNext());
+        }
+
+        ListAdapter adapter = new SimpleAdapter(SelectAlternativeActivity.this, daftarMHS, R.layout.activity_select_alternative_adapter, new String[]{"key_no","key_nama"}, new int[]{R.id.select_alternative_cb, R.id.select_alternative_name});
+        lvData.setAdapter(adapter);
+
+        lvData.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                selectedStrings.add(lvData.getSelectedItem().toString());
+                CheckBox select_cb = (CheckBox) view.findViewById(R.id.select_alternative_cb);
+                TextView select_nama = (TextView) view.findViewById(R.id.select_alternative_name);
+
+                if (select_cb.isChecked()) {
+                    Toast.makeText(getApplicationContext(),"Uncentang" + select_cb.getText().toString(), Toast.LENGTH_SHORT).show();
+                    select_cb.setChecked(false);
+                    selected_ids.remove(select_cb.getText().toString());
+                    selected_names.remove(select_nama.getText().toString());
+                } else if (!select_cb.isChecked()) {
+                    selected_ids.add(select_cb.getText().toString());
+                    selected_names.add(select_nama.getText().toString());
+                    select_cb.setChecked(true);
+                    Toast.makeText(getApplicationContext(),"centang" + select_cb.getText().toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+
+        });
+
+        lvData.setSelected(true);
+
+    }
+
 }

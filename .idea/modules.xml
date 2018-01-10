@@ -4,8 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/IAK-DSS.iml" filepath="$PROJECT_DIR$/IAK-DSS.iml" />
       <module fileurl="file://C:\UrProject\SPK_SAW\IAK-DSS.iml" filepath="C:\UrProject\SPK_SAW\IAK-DSS.iml" />
-      <module fileurl="file://C:\Users\premawaisnawa\Documents\GitHub\IAK-DSS\IAK-DSS\SPK_SAW.iml" filepath="C:\Users\premawaisnawa\Documents\GitHub\IAK-DSS\IAK-DSS\SPK_SAW.iml" />
       <module fileurl="file://C:\Users\NUGIE\Documents\GitHub\IAK-DSS\SPK_SAW.iml" filepath="C:\Users\NUGIE\Documents\GitHub\IAK-DSS\SPK_SAW.iml" />
+      <module fileurl="file://C:\Users\premawaisnawa\Documents\GitHub\IAK-DSS\IAK-DSS\SPK_SAW.iml" filepath="C:\Users\premawaisnawa\Documents\GitHub\IAK-DSS\IAK-DSS\SPK_SAW.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

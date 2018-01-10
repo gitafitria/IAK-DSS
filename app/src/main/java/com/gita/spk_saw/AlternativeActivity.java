@@ -73,7 +73,6 @@ public class AlternativeActivity extends AppCompatActivity {
             } while (cursor.moveToNext());
         }
 
-
 //        ListAdapter adapter = new SimpleAdapter(DataActivity.this, daftarMHS, R.layout.adapter_data_mhs, new String[]{"key_nim", "key_nama","key_jurusan"}, new int[]{R.id.tv_nim, R.id.tv_nama, R.id.tv_jurusan});
         ListAdapter adapter = new SimpleAdapter(AlternativeActivity.this, daftarMHS, R.layout.activity_data_adapter, new String[]{"key_no","key_nama", "key_tempat", "key_tanggal","key_jurusan"}, new int[]{R.id.tvNo, R.id.tvNama, R.id.tvTempat, R.id.tvTanggal, R.id.tvJurusan});
         lvData.setAdapter(adapter);

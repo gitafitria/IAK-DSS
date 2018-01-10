@@ -27,7 +27,13 @@ public class DBController extends SQLiteOpenHelper{
         dataBiodata.execSQL(query);
         Log.d("Buat Tabel Alternative", query);
 
-        query = "INSERT INTO alternative(id, nama, tempatlahir, tanggallahir, jurusan) VALUES ('1','Satria','Blahkiuh','1997-07-04','MTI')";
+        query = "INSERT INTO alternative(id, nama, tempatlahir, tanggallahir, jurusan) " +
+                "VALUES ('1','Satria','Blahkiuh','1997-07-04','MTI')";
+        dataBiodata.execSQL(query);
+        Log.d("Tes insert data", query);
+
+        query = "INSERT INTO alternative(id, nama, tempatlahir, tanggallahir, jurusan) " +
+                "VALUES ('2','Gita','Denpasar','1996-07-04','MTI')";
         dataBiodata.execSQL(query);
         Log.d("Tes insert data", query);
 

@@ -1,146 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
     tools:context="com.gita.spk_saw.SelectAlternativeActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/appbar_padding_top"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_weight="1"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:title="Select the Alternative">
+
+        </android.support.v7.widget.Toolbar>
+    </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
         android:background="#babababa"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <ListView
+            android:layout_weight="1"
+            android:id="@+id/lvSelectAlternative"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-        <LinearLayout
-            android:padding="20dp"
+        <Button
+            android:layout_weight="0"
+            android:id="@+id/btnNextCalculate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:text="Add Alternative" />
 
-            <TextView
-                android:textAllCaps="true"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="20dp"
-                android:text="score the candidate (1/3)" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:text="1. Gita" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:padding="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginRight="20dp"
-                    android:text="@string/bravery_label" />
-
-                <EditText
-                    android:id="@+id/score_bravery_1"
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:ems="10"
-                    android:background="#fff"
-                    android:inputType="number" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:padding="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginRight="20dp"
-                    android:text="@string/performance_label" />
-
-                <EditText
-                    android:id="@+id/score_performance_1"
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0"
-                    android:ems="10"
-                    android:background="#fff"
-                    android:inputType="number" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:padding="10dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginRight="20dp"
-                    android:text="@string/temperament_label" />
-
-                <RadioGroup
-                    android:id="@+id/score_temperament_1"
-                    android:layout_width="180dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0">
-
-                    <RadioButton
-                        android:id="@+id/temperament_angry_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/temperament_1_label" />
-
-                    <RadioButton
-                        android:id="@+id/temperament_normal_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/temperament_2_label"/>
-
-                    <RadioButton
-                        android:id="@+id/temperament_calm_1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/temperament_3_label"/>
-
-                </RadioGroup>
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_weight="0"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/next_to_1"
-                android:textColor="#fff"
-                android:background="#5C6BC0"
-                android:text="Next candidate >"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"/>
-        </LinearLayout>
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>

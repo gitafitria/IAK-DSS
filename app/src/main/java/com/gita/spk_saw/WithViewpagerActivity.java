@@ -15,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class WithViewpagerActivity extends AppCompatActivity {
 
     /**
@@ -39,19 +41,20 @@ public class WithViewpagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_with_viewpager);
 
+        final ArrayList<String> selected_ids = getIntent().getStringArrayListExtra("selected_ids");
+        final ArrayList<String> selected_names = getIntent().getStringArrayListExtra("selected_names");
+
         tl = (TabLayout)findViewById(R.id.tabs);
-        // TODO: SET INTENT DI ACTIVITY SEBELUMNYA DENGAN KEY-VALUE:
-        // - ID
-        // - NAMA (DIGUNAKAN UNTUK MENAMPILKAN NAMA DI JUDUL TAB)
-        tl.addTab(tl.newTab().setText("Gita"));
-        tl.addTab(tl.newTab().setText("Fitria"));
-        tl.addTab(tl.newTab().setText("Ratnasari"));
+
+        for(int i=0; i<selected_names.size(); i++) {
+            tl.addTab(tl.newTab().setText(selected_names.get(i)));
+        }
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), 3);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager(), selected_names.size());
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
@@ -62,29 +65,6 @@ public class WithViewpagerActivity extends AppCompatActivity {
 
     }
 
-
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        getMenuInflater().inflate(R.menu.menu_with_viewpager, menu);
-//        return true;
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_settings) {
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
-//
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -116,7 +96,6 @@ public class WithViewpagerActivity extends AppCompatActivity {
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
             String next_label = null;
 
-            // TODO: LAKUKAN SELECT DARI DATABASE SESUAI DENGAN ID (SET_INTENT) YANG TERCENTANG
             switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
                 case 1:
                     next_label = "Gita";
@@ -129,7 +108,7 @@ public class WithViewpagerActivity extends AppCompatActivity {
                     break;
 
             }
-            // TODO: SET ATTRIBUTES UNTUK MASING-MASING FIELD YANG DIBUTUHKAN
+
             textView.setText(next_label);
             return rootView;
         }
